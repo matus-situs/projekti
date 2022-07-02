@@ -1,0 +1,13 @@
+#nedostupno{
+    color: #111;      
+    font-size: 64px; 
+    font-weight: 700; 
+    line-height: 64px; 
+    margin: 0 0 0; 
+    padding: 20px 30px; 
+    text-align: center; 
+    text-transform: uppercase; 
+}
+#video{
+    text-align: center;
+}

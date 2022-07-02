@@ -1,0 +1,38 @@
+form{
+    margin-bottom: 50px;
+}
+label{
+    padding-right: 14px;
+}
+input{
+    padding: 10px 20px;
+    background-color: #1996e3;
+    border:none;
+    border-radius: 25px;
+    color:white;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+input:hover{
+    background-color: #10669c;
+}
+select{
+    margin-right: 14px;
+    padding: 5px 10px;
+}
+table{
+    align-content: center;
+    margin: auto;
+    text-align: center;
+}
+thead{
+    font-weight: 700;
+}
+thead td{
+    padding: 10px 30px;
+}
+.naslov{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #1996e3;
+}

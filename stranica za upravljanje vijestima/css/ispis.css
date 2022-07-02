@@ -1,0 +1,32 @@
+table{
+    margin: auto;
+}
+#printBtn{
+    padding: 14px 16px;
+    background-color: #edb313;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    margin: 20px;
+}
+#printBtn:hover{
+    background-color: #c79712;
+}
+#PDFBtn{
+    padding: 14px 16px;
+    background-color: #c8ed0e;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: none;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    margin: 20px;
+}
+#PDFBtn:hover{
+    background-color: #a0bd11;
+}
+#gumbovi{
+    text-align: center;
+}

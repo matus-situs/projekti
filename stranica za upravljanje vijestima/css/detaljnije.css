@@ -1,0 +1,25 @@
+#datumkreiranja{
+    padding: 12px 14px;
+}
+#kategorija{
+    text-transform: uppercase;
+    padding: 12px 14px;
+    color: white;   
+    background-color: #07ba3a;;
+    width: fit-content;
+    margin-bottom: 20px;
+}
+img{
+    align-self: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#sadrzaj{
+    margin: 20px auto;
+    max-width: 55%;
+    text-align: justify;
+}
+#autor{
+    margin: 20px auto;
+}

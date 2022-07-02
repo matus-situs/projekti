@@ -1,0 +1,37 @@
+form{
+    align-content: center;
+    max-width: 60%;
+    margin: auto;
+    
+}
+form div{
+    margin-bottom: 10px;
+}
+form label {
+    display: inline-block;
+    width: 400px;
+}
+form input {
+    padding: 5px 10px;
+}
+#gumb{
+    margin-top: 20px;
+    padding: 20px 40px;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    background-color: #1996e3;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 25px;
+}
+#gumb:hover{
+    background-color: #10669c;
+}
+#pomak{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+body a{
+    text-decoration: none;    
+}

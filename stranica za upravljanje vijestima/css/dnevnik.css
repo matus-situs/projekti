@@ -1,0 +1,22 @@
+select{
+    margin-right: 14px;
+    padding: 5px 10px;
+}
+form{
+    margin-bottom: 50px;
+}
+label{
+    padding-right: 14px;
+}
+#filtriraj{
+    padding: 10px 20px;
+    background-color: #1996e3;
+    border:none;
+    border-radius: 25px;
+    color:white;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+#fitriraj:hover{
+    background-color: #10669c;
+}

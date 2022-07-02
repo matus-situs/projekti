@@ -1,0 +1,44 @@
+.formaPopup {
+  position: fixed;
+  top: 10%;
+  margin-left: 20%;
+  border: none;
+  z-index: 9;
+  }
+  #razlogOdbijanja {
+    max-width: 350px;
+    padding: 10px;
+    padding-right: 50px;
+    background-color: white;
+  }
+  #razlogOdbijanja input[type=text], input[type=date]{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+ .gumb {
+    background-color: #08d1ba;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+  }
+.gumb:hover {
+    background-color: #069483;
+  }
+.odustani{
+    background-color: #e63525;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+}
+.odustani:hover{
+    background-color: #b52b1f;
+}

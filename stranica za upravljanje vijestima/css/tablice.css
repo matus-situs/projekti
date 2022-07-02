@@ -1,0 +1,17 @@
+table{
+    text-align: center;
+}
+thead{
+    font-weight: 700;
+}
+thead td{
+    padding: 10px 30px;
+}
+tr td{
+    padding: 10px 30px;
+}
+td a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #1996e3;
+}

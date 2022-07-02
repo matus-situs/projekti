@@ -1,0 +1,99 @@
+.formaPopup {
+  
+  visibility: inherit;
+    display: none;
+    position: absolute;
+    top: 0;
+    margin-left: 10%;
+    border: none;
+    z-index: 9;
+    }
+    #novaVijestForm {
+      max-width: 50%;
+      padding: 10px;
+      padding-right: 50px;
+      background-color: white;
+      text-align: center;
+    }
+    #novaVijestForm input[type=text], input[type=date]{
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+    }
+   .gumb {
+      background-color: #08d1ba;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+    }
+  .gumb:hover {
+      background-color: #069483;
+    }
+  .odustani{
+      background-color: #e63525;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom:10px;
+  }
+  .odustani:hover{
+      background-color: #b52b1f;
+  }
+  #uspjesnoKreiranaVjest{
+    background-color: #34f734;
+    align-content: center;
+    color: white;
+    padding: 14px 16px;
+    line-height: 26px;
+    margin: 10px auto 50px auto;
+    max-width: 50%;    
+  }
+  .otvoriNovaVijestForm{
+    border: none;
+    background-color: #c06eff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 25px;
+  }
+  .otvoriNovaVijestForm:hover{
+    background-color: #863bbf;
+  }
+  .dorada{
+    background-color: #e63525;
+    color:white;
+    padding: 14px 16px;
+    border-radius: 25px;
+  }
+  .azurirajForm{
+    border: none;
+    background-color: #e4ff6e;
+    color: black;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 25px;
+  }
+  .azurirajForm:hover{
+    background-color: #acc054
+  }
+  #kreirajNovu{
+    border: none;
+    text-decoration: none;
+    background-color: #c06eff;
+    color: white;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 25px;
+  }
+  #kreirajNovu:hover{
+    background-color: #863bbf;
+  }

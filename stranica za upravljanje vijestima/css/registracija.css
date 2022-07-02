@@ -1,0 +1,49 @@
+#gumbRegistracija{
+    margin-top: 20px;
+    padding: 20px 40px;
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+    background-color: #1996e3;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 25px;
+}
+#gumbRegistracija:hover{
+    background-color: #10669c;
+}
+#uspjeh{
+    background-color: #43e767;
+    align-content: center;
+    color: black;
+    padding: 14px 16px;
+    line-height: 26px;
+    margin: 10px auto 50px auto;
+    max-width: 30%;
+    
+}
+form{
+    align-content: center;
+    max-width: 33%;
+    margin: auto;
+    
+}
+form div{
+    margin-bottom: 10px;
+}
+form label {
+    display: inline-block;
+    width: 200px;
+}
+form input {
+    padding: 5px 10px;
+}
+#greske{
+    background-color: #e75443;
+    align-content: center;
+    color: white;
+    padding: 14px 16px;
+    line-height: 26px;
+    margin: 10px auto 50px auto;
+    max-width: 30%;    
+}

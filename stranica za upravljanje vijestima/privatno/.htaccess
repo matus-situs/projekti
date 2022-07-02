@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Molim da unesete korisničko ime i lozinku za pristup podacima"
+AuthUserFile /var/www/webdip.barka.foi.hr/2021_projekti/WebDiP2021x098/privatno/.htpasswd
+Require valid-user

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Projekt</title>
+    <link rel="stylesheet" href="css/opcenito.css">
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <ul>
+                <li><a href='index.php'>Početna</a></li>                
+            </ul>
+        </nav>
+        <h1>Dokumentacija projekta "Provjera informacija"</h1>
+    </header>
+    <div id="opiszadatka">
+        <h2>Opis zadatka</h2>
+        Sustav služi za upravljanje, recenziju i ocjenu točnosti informacija.
+    </div>
+    <div id="opisrjesenja">
+        <h2>Opis projektnog rješenja</h2>
+        Rješenje ima 4 korisničke uloge: neregistrirani korisnik, registrirani korisnik, moderator/recenzent i administrator.<br><br>
+        Uloga administratora:
+        <ul>
+            <li>Kreira/Pregledava/Ažurira kategorije vijesti (politika, sport, hrana, …) i dodjeljuje moderatore kategoriji vijesti.</li>
+            <li>Vidi popis vijesti u statusu recenzija i definira recenzenta za vijest. Može odabrati samo recenzenta iz popisa moderatora koji su zaduženi za kategoriju u kojoj je vijest. Može
+                promjeniti recenzenta sve dok vijest nije prihvaćena ili odbijena.</li>
+            <li>Vidi popis korisnika sustava (korisnička imena) i njihove uloge koje može ažurirati</li>
+            <li>Ima uvid u dnevnik u kojemu se zapisuju sve aktivnosti sustava</li>
+            <li>Ima mogućnost mjenjanja postavki sustava (npr. trajanje kolačića, broj rezultata po stranici itd.)</li>
+            <li>Vidi popis blokiranih korisnika te je u mogućnosti ih odblokirati</li>
+        </ul> 
+        Uloga moderatora:
+        <ul>
+            <li>Vidi popis vijesti u statusu recenzija koje su mu dodijeljene i može kreirati recenziju. Sva
+                polja odabrane vijesti su unaprijed popunjena. U recenziji označava što nedostaje:
+                činjenične pogreške, gramatičke pogreške, nedostatak materijala (video/audio),
+                nedostatak izvora (referenci). Unosi svoj komentar te određuje status da li je vijest
+                prihvaćena, odbijena, recenzija ili ide na doradu. Ažuriranje može raditi dok je status
+                recenzija. Za jednu vijest uvijek je samo jedna recenzija.</li>
+            <li>Vidi popis vijesti koje su u statusu odbijeno i može blokirati korisnika koji je napisao tu
+                vijest sa unosom razloga i datuma i vremena do kada je blokiran. Time korisnik ne može
+                pisati vijesti u toj kategoriji. Može promjeniti razlog i datum do kada je blokiran.</li>
+            <li>Vidi popis korisnika koji imaju zabranu objavljivanja i može otići na ažuriranje zabrane.</li>
+            <li>Vidi statistiku broja prihvaćenih/odbijenih vijesti po autorima vijesti.</li>
+        </ul>
+        Uloga registriranog korisnika:
+        <ul>
+            <li>Pregledava vijesti koje je kreirao. Može kreirati/ažurirati vijest pri čemu bira kategoriju,
+                unosi naslov, autora/e, tekst članka, URL do izvora (opcionalno), datum i vrijeme objave
+                (automatski se unosi), te prilaže sliku, a opcionalno video/audio. Verziju vijesti se
+                automatski povećava za jedan kod svakog ažuriranja. Odmah pri kreiranju ili ažuriranju
+                status vijesti postaje “recenzija”. Ažuriranje može raditi dok je status dorada. Ukoliko ima
+                zabranu ne može objaviti novu vijest sve dok moderator ne ukine zabranu.
+                </li>
+            <li>Vidi popis kategorija u kojima je blokiran za pisanje vijesti sa informacijom do kada.</li>
+            <li>Vidi sve svoje recenzije s informacijom na koju vijest se vežu i statusom same vijesti te može
+                otići na ažuriranje vijesti ako je vijest u statusu dorada. Posebno su označene recenzije vijesti
+                koje su u statusu dorada</li>
+            <li>Pregledava statistiku broja pregleda svojih vijesti.</li>
+        </ul>
+        Uloga neregistriranog korisnika
+        <ul>
+            <li>Vidi rang listu vijesti prema broju pregleda</li>
+            <li>Vidi prihvaćene vijesti u obliku galerije slika uz mogućnost sortiranja po kategoriji vijesti ili
+                broju pregleda i može filtrirati po tagovima.</li>
+        </ul>       
+    </div>
+    <div id="era">
+        <h2>ERA model projektnog rješenja</h2>
+        <a href="materijali/ERA.png" target="_blank"><img src="materijali/ERA.png" width="30%"></a>
+    </div>
+    <div id="skripte">
+        <h2>Popis i opis skripata, mapa mjesta, navigacijski dijagram</h2>
+
+        <h3>Mapa admin</h3>
+        <h4>Skripta blokirani_korisnici.php</h4>
+        Ova skripta generira popis svih blokiranih korisnika zbog neuspjelog broja pokušaja ulaska u sustav (1. tablica) i korisnika koji su blokirani u određenoj kategoriji (2. tablica).
+        Također administrator ima mogućnost odblokiranja korisnika.
+        <h4>Skripta dnevnik.php</h4>
+        Ova skripta prikazuje sve zapise dnevnika. Administrator može vidjeti tko se kada logirao u sustav, odjavio iz sustava, napisao vjest, registrirao se itd.
+        Također može filtrirati prema željenom kriteriju tako da lakše dođe do podataka koje traži.
+        <h4>Skripta kategorija</h4>
+        Skripta omogućuje administratoru unošenje nove kategorije u sustav. Također može vidjeti sve postojeće kategorije u sustavu i dodjeliti pojedinoj moderatora. Također može i obrisati kategoriju iz sustava.
+        <h4>Skripta korisnici.php</h4>
+        Ova skripta prikazuje sva korisnička imena korisnika u sustavu i njihovu ulogu te im može dati/oduzeti ulogu.
+        <h4>Skripta postavke.php</h4>
+        Unutar skripte se nalaze popis postavki sustava koje administrator može mjenjati. Prilikom trajanja ažuriranja postavki, stranica postaje nedostupna za sve korisnike.
+        <h4>Skripta vijesti_recenzija.php</h4>
+        Skripta sadrži popis svih napisanih vijesti u sustavu koje čekaju recenziju. Također može dodati svakoj vijesti njenog recenzenta prilikom.
+        
+        <h3>Mapa css</h3>
+        <h4>Skripta blokirani_korisnici.css</h4>
+        Unutar skripte se nalazi vizualni opis za skriptu blokirani_korisnici.php.
+        <h4>Skripta detaljnije.css</h4>
+        Ova skripta sadrži vizualni opis skripte detaljnije.php koja prikazuje informacije pojedine vijesti.
+        <h4>Skripta dnevnik.css</h4>
+        Unutar skripte se nalazi vizualni opis za skriptu dnevnik.php.
+        <h4>Skripta greske.css</h4>
+        Unutar skripte se nalazi vizualni opis grešaka za sve skripte u kojima može doći do greške prilikom unosa podataka.
+        <h4>Skripta index.css</h4>
+        Unutar skripte se nalazi vizualni opis za skriptu index.php.
+        <h4>Skripta ispis.css</h4>
+        Unutar skripte se nalazi vizualni opis za elemente ispisa (u PDF ili printer) skripti koje imaju statistiku.
+        <h4>Skripta nedostupno.css</h4>
+        Unutar skripte se nalazi vizualni opis za skriptu nedostupno.html.
+        <h4>Skripta opcenito.css</h4>
+        Unutar skripte se nalazi vizualni opis zajednički elemenata svih skripti.
+        <h4>Skripta popupforma.css</h4>
+        Unutar skripte se nalazi vizualni opis pop-up forme u skripti odbijeno.php.
+        <h4>Skripta popupformamoderatorvijesti.css</h4>
+        Unutar skripte se nalazi vizualni opis pop-up forme u skripti vijestimoderator.php.
+        <h4>Skripta popupformamojevijesti.css</h4>
+        Unutar skripte se nalazi vizualni opis pop-up forme u skripti mojevijesti.php.
+        <h4>Skripta postavke.css</h4>
+        Unutar skripte se nalazi vizualni opis skripte postavke.php.
+        <h4>Skripta prijava.css</h4>
+        Unutar skripte se nalazi vizualni opis skripte prijava.php.
+        <h4>Skripta registracija.css</h4>
+        Unutar skripte se nalazi vizualni opis skripte registracija.php.
+        <h4>Skripta skrivenpopup.css</h4>
+        Unutar skripte se nalazi kod za skrivanje pop-up forme kod skripte odbijeno.php.
+        <h4>Skripta stranicenje.css</h4>
+        Unutar skripte se nalazi vizualni opis funkcionalnosti straničenja kod svih skripti koje imaju implementirano straničenje.
+        <h4>Skripta tablice.css</h4>
+        Unutar skripte se nalazi vizualni opis tablica kod svih skripti koje imaju tablice.
+        <h4>Skripta vijesti_recenzija.css</h4>
+        Unutar skripte se nalazi vizualni opis skripte vijesti_recenzija.php.
+        <h4>Skripta vijesti.css</h4>
+        Unutar skripte se nalazi vizualni opis skripte vijesti.php.
+
+        <h3>Mapa javascript</h3>
+        <h4>Skripta msitaric_kategorije_jquery.js</h4>
+        Ova skripta sadrži funkciju za automatsko popunjavanje korisnika u polje za unos u skripti kategorije.php.
+        <h4>Skripta msitaric_kategorije.js</h4>
+        Ova skripta sadrži funkciju za provjeru ispravnosti unosa podataka u skripti kategorije.php.
+        <h4>Skripta mojevijesti.js</h4>
+        Ova skripta sadrži funkciju za provjeru ispravnosti unosa podataka u skripti mojevjesti.php.
+        <h4>Skripta msitaric_odbijeno.js</h4>
+        Ova skripta sadrži funkciju za provjeru ispravnosti unosa podataka u skripti msitaric_odbijeno.php.
+        <h4>Skripta msitaric_prijava.js</h4>
+        Ova skripta sadrži funkciju za provjeru ispravnosti unosa podataka u skripti msitaric_prijava.php.
+        <h4>Skripta msitaric_registracija.js</h4>
+        Ova skripta sadrži funkciju za provjeru ispravnosti unosa podataka u skripti msitaric_registracija.php.
+        <h4>Skripta msitaric_registriran_statistika.js</h4>
+        Ova skripta sadrži funkciju za ispis stranice te funkciju za generiranje PDF dokumenta.
+        <h4>Skripta msitaric_recenzija_jquery.js</h4>
+        Ova skripta sadrži funkciju za automatsko popunjavanje korisnika u polje za unos u skripti vijesti_recenzija.php.
+        <h4>Skripta msitaric_recenzija.js</h4>
+        Ova skripta sadrži funkciju za provjeru ispravnosti unosa podataka u skripti vijesti_recenzija.php.
+        <h4>Skripta msitaric_vijestimoderator.js</h4>
+        Ova skripta sadrži funkciju za provjeru ispravnosti unosa podataka u skripti vijestimoderator.php.
+
+        <h3>Mapa json</h3>
+        <h3>Datoteka searchKorisnici.json</h3>
+        Unutar ove datoteke se nalazi popis korisnika koji se smiju unjeti u polje za unos.
+
+        <h3>Mapa materijali</h3>
+        Sve datoteke u ovoj mapi sadrže audio, video i slike pojedinih vijesti sustava.
+
+        <h3>Mapa moderator</h3>
+        <h4>Skripta odbijeno.php</h4>
+        Ova skripta sadrži popis svih odbijenih vijesti autora i može se pojedini autor blokirati u kategoriji napisane vjesti.
+        <h4>statistika.php</h4>
+        Unutar ove skripte moderator može vidjeti statistiku broja primljenih i odbijenih vijesti sustava te ih može ispisati ili skinuti u PDF formatu.
+        <h4>Skripta vijestimoderator.php</h4>
+        Unutar skripte se nalazi popis svih vjesti koje su dodjeljene prijavljenom moderatoru za recenziranje te ih može recenzirati.
+
+        <h3>Mapa neregistrirani</h3>
+        <h4>Skripta detaljnije.php</h4>
+        Unutar ove skripte se nalaze sve informacije o odabranoj vijesti sa skripte vijesti.php
+        <h4>Skripta vijesti.php</h4>
+        Unutar ove skripte se nalazi popis svih primljenih vijesti sustava i mogu se filtrirati prema broju pregleda i tagovima. Otvaraju se informacije o vijesti klikom na njen naslov.
+
+        <h3>Obrasci</h3>
+        <h4>Skripta prijava.php</h4>
+        Ova skripta sadrži formu za prijavu korisnika u sustav. Također korisnik može odabrati da li želi zapamtiti svoje korisničko ime i lozinku.
+        <h4>Skripta registracija.php</h4>
+        Ova skripta sadrži formu za registraciju korisnika u sustav. Radi provjeru unosa podataka prije nego li pošalje aktivacijski mail sa kodom.
+
+        <h3>Mapa php</h3>
+        <h4>Skripta msitaric_registracija</h4>
+        Ova skripta obavlja funkciju provjere registracije korisnika. Ako je korinik zakasnio sa svojom registracijom, onda ne aktivira njegov račun.
+        <h4>Skipta zaboravljena.php</h4>
+        Skripta obavlja funkciju slanja nove lozinke na mail u slučaju zaboravljene lozinke.
+
+        <h3>Mapa privatno</h3>
+        Ovo je zaštićena mapa .htaccess-om i u njoj se nalazi skripta korisnici.php.
+        <h4>Skripta korisnici.php</h4>
+        Ova skripta sadrži popis svih korisničkih imena sustava, njihove lozinke i uloge.
+
+        <h3>Mapa registriran</h3>
+        <h4>Skripta blokiranekategorije.php</h4>
+        Ova skripta sadrži popis svih kategorija u kojima je registrirani korisnik blokiran.
+        <h4>Skritpa mojevijesti.php</h4>
+        Ova skripta omogućuje pregled svih vijesti koje je registrirani korisnik napisao. Također daje mogućnost pisanja novih vijesti te ažuriranja vijesti koje su na doradi.
+        <h4>Skripta registriran_statistika.php</h4>
+        Ova skripta sadrži popis svih vijesti logiranog korisnika te broj njihovih pregleda. Također može statistiku isprintati ili skinuti u PDF formatu.
+        
+        <h3>Mapa vanjske_datoteke</h3>
+        Ova mapa sadrži skriptu baza_class.php preuzetu sa Moodle sustava.
+        <h4>Skripta baza_class.php</h4>
+        Ova skripta omogućuje spajanje na bazun dohvaćanje podataka s baze, ažuriranje podataka na bazi i odspajanje na bazu.
+
+        <h3>Mapa xml</h3>
+        <h4>Datoteka postavke.xml</h4>
+        Ova datoteka sadrži sve parametre postavki sustava koje može ažurirati samo admin.
+
+        <h3>Ostale skripte</h3>
+        <h4>Skripta index.php</h4>
+        Ovo je početna skripta koja služi za navigaciju do ostalih skripti, do nje može doći svaki korisnik sustava.
+        <h4>Skripta nedostupno.html</h4>
+        Ova skripta je stranica na koju se sve druge preusmjeravaju u slučaju ažuriranja postavki sustava.
+        <h4>Skripta dokumentacija.html</h4>
+        Ova skripta sadrži dokumentaciju cijelog projekta.
+        <h4>Skripta o_autoru.html</h4>
+        Ova skripta sadrži podatke o autoru projekta.
+
+        <h3>Navigacijski dijagrami</h3>
+        <h4>Navigacijski dijagram administratora</h4>
+        <a href="materijali/adminnav.png" target="_blank"></a><img src="materijali/adminnav.png" width="30%"><a>
+        <h4>Navigacijski dijagram moderatora/recenzenta</h4>
+        <a href="materijali/moderatornav.png" target="_blank"></a><img src="materijali/adminnav.png" width="30%"><a></a>
+        <h4>Navigacijski dijagram registriranog korisnika/autora</h4>
+        <a href="materijali/registrirannav.png" target="_blank"></a><img src="materijali/adminnav.png" width="30%"><a></a>
+        <h4>Navigacijski dijagram neregistriranog korisnika</h4>
+        <a href="materijali/neregistrirannav.png" target="_blank"></a><img src="materijali/adminnav.png" width="30%"><a></a>
+    </div>
+    <div id="alati">
+        <h2>Popis i opis korištenih tehnologija i alata</h2>
+        <h3>VS Code</h3>
+        VS Code služi za uređivanje bilo kakvog programskog koda. U njemu je napisan cijeli projekt.
+        <h3>Barka</h3>
+        Barka je server na kojemu je testiran cijeli projekt.
+        <h3>Mozzila Firefox</h3>
+        Firefox je web preglednik preko kojeg je testirana funkcionalnost projekta.
+        <h3>MySQL Workbench</h3>
+        MySQL Workbench je alat pomoću kojeg se može vizualno kreirati struktura baze podataka te istu exportat-i kao MySQL sintaksu.
+        <h3>Filezilla</h3>
+        Filezilla je alat pomoću kojeg se projekt prebacio s lokalnog spremišta na barku.
+    </div>
+    <div id="vanjsko">
+        <h2>Popis i opis vanjskih (tuđih) modula/biblioteka i njihovo korištenje u skriptama i sl</h2>
+        <h3>Skripta baza_class.php</h3>
+        Skripta je preuzeta sa Moodle sustava. Služi se u svim skrptama za spajanje na bazu i upravljanje podacima baze.
+        <h3>Html2pdf</h3>
+        Vanjska skripta koja uključuje funkciju html2pdf() koja omogućuje spremanje stranice u PDF obliku. Koristi se u skripti msitaric_registriran_statistika.js.
+        <h3>Jquery autocomplete</h3>
+        Vanjska skripta i css koja omogućuje automatsko završavanje polja unosa prilikom unosa podataka u njega. Koristi se u skriptama msitaric_kategorije_jquery.js i msitaric_recenzija_jquery.js.
+        <h3>Google reCaptcha</h3>
+        Skripta koja implementira verificiranje putem reCaptcha-e. Koristi se u skripti registracija.php
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,13 @@
+#trenutno{
+    margin: 20px auto;
+}
+.stranica{
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    background-color: beige;
+    color: black;
+    border: black 1px;
+    border-style: solid;
+}

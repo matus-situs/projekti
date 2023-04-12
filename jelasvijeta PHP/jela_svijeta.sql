@@ -42,8 +42,7 @@ INSERT INTO `category` (`id`, `title`, `slug`) VALUES
 (2, 'Juha', 'juha'),
 (3, 'Kolac', 'kolac'),
 (4, 'Glavno jelo', 'glavno-jelo'),
-(5, 'Predjelo', 'predjelo'),
-(6, 'NULL', 'null');
+(5, 'Predjelo', 'predjelo');
 
 -- --------------------------------------------------------
 
@@ -99,11 +98,11 @@ CREATE TABLE `meal` (
 
 INSERT INTO `meal` (`id`, `title`, `Category_id`, `creation_date`) VALUES
 (1, 'Pileći batci s pire krumpirom', 4, '2022-07-06'),
-(4, 'Brzinske lazanje', 6, '2022-07-07'),
+(4, 'Brzinske lazanje', NULL, '2022-07-07'),
 (5, 'Šampinjoni sa češnjakom', 5, '2022-07-07'),
 (6, 'Bolanjez', 4, '2022-07-05'),
 (7, 'Čokoladna pita', 3, '2022-07-05'),
-(8, 'Jelo bez kategorije', 6, '2022-07-07');
+(8, 'Jelo bez kategorije', NULL, '2022-07-07');
 
 -- --------------------------------------------------------
 
@@ -287,7 +286,7 @@ ALTER TABLE `tag`
 -- Constraints for table `meal`
 --
 ALTER TABLE `meal`
-  ADD CONSTRAINT `fk_Meal_Category` FOREIGN KEY (`Category_id`) REFERENCES `category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Meal_Category` FOREIGN KEY (`Category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `meal_has_ingredient`
